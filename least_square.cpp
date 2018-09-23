@@ -6,15 +6,15 @@ int main()
 	using namespace std;
 	double Init_y[3] = {1,2,3};
     	double Init_x[3][2] = {{0,0},{0,1},{1,0}};
-	int Max_step = 10;
-	double Init_learn = 0.001;
-	double Beta[2] = {0.1,0.1};
-	double Gradient[2] = {0,0};
-	double sum = 0;
-	double sum_beta_x = 0;
-	double y_beta_x = 0;
+	int Max_step = 100;
+	double Init_learn = 0.1;
+	double Beta[2] = {0.1,0.1};	
 	for(int i=0;i<Max_step;i++)
 	{
+		double sum_beta_x = 0;
+		double Gradient[2] = {0,0};
+		double sum = 0;
+		double y_beta_x = 0;
 		for(int j=0;j<sizeof(Init_x)/sizeof(Init_x[0]);j++)
 		{
             		sum_beta_x = Beta[0]*Init_x[j][0] + Beta[1]*Init_x[j][1];
@@ -32,6 +32,7 @@ int main()
 		}
 		cout << "The loss of " << i << " step is " << sum <<";" << endl;
 	}
+	cout << "The final beta is " << Beta[0] << " , " << Beta[1] << ";" << endl;
 	return 0;
 
 }
