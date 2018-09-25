@@ -70,8 +70,8 @@ int main()
 	LAYER layer;
 		
 	double Init_y[3] = {1,2,3};
-    double Init_x[][2] = {0,0,0,1,1,0};
-    double Beta[2] = {0.1,0.1};
+	double Init_x[][2] = {0,0,0,1,1,0};
+	double Beta[2] = {0.1,0.1};
 	layer.Gradient_layer(Init_x, Init_y, Beta);
 	return 0;
 
